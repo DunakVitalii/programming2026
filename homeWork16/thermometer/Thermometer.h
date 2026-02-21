@@ -18,4 +18,7 @@ public:
     void showThermometer();
     double increaseTemperature(double newValue);
     double decreaseTemperature(double newValue);
+
+    double getCurrentTemperature(); 
+    
 };

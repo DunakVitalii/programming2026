@@ -49,3 +49,6 @@ double Thermometer::decreaseTemperature(double newValue)
     }
     return currentTemperature;
 }
+double Thermometer::getCurrentTemperature() {
+    return this->currentTemperature;
+}
