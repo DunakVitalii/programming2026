@@ -12,7 +12,7 @@ private:
     double maxLimit;
 
 public:
-
+    Thermometer() {}
     Thermometer(double cTemp, double lMin, double lMax);
         
     void showThermometer();

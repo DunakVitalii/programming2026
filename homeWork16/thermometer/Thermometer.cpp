@@ -50,5 +50,6 @@ double Thermometer::decreaseTemperature(double newValue)
     return currentTemperature;
 }
 double Thermometer::getCurrentTemperature() {
+    this->showThermometer();
     return this->currentTemperature;
 }
