@@ -28,10 +28,10 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "${fileDirname}\\thermometer\\Thermometer.cpp",
+                "${fileDirname}\\TV\\TV.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${fileDirname}\\HomeWork15\\main1.cpp"
+                
             ],
             "options": {
                 "cwd": "${fileDirname}"
