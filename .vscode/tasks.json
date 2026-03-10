@@ -28,7 +28,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "${fileDirname}\\TV\\TV.cpp",
+                // "${fileDirname}\\TV\\TV.cpp",
+                //"${fileDirname}\\Bounded\\Bounded.cpp",
+                "${fileDirname}\\test\\test.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 
