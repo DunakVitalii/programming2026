@@ -30,7 +30,8 @@
                 "${file}",
                 // "${fileDirname}\\TV\\TV.cpp",
                 //"${fileDirname}\\Bounded\\Bounded.cpp",
-                "${fileDirname}\\test\\test.cpp",
+                //"${fileDirname}\\test\\test.cpp",
+                "${fileDirname}\\class\\class.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 
