@@ -28,39 +28,39 @@ public:
     Bounded operator* (const Bounded& rhs) const;  // done
     double operator/ (const Bounded& rhs) const;  // done
 
-    Bounded operator+ (const int rhs) const;
-    Bounded operator- (const int rhs) const;
-    Bounded operator* (const int rhs) const;
-    double operator/ (const int rhs) const;
+    Bounded operator+ (const int rhs) const; // done
+    Bounded operator- (const int rhs) const; // done
+    Bounded operator* (const int rhs) const; // done
+    double operator/ (const int rhs) const; // done
 
-    Bounded operator+ (const double rhs) const;
-    Bounded operator- (const double rhs) const;
-    Bounded operator* (const double rhs) const;
-    double operator/ (const double rhs) const;
+    Bounded operator+ (const double rhs) const; // done
+    Bounded operator- (const double rhs) const; // done
+    Bounded operator* (const double rhs) const; // done
+    double operator/ (const double rhs) const; // done
 
-    Bounded& operator+= (const Bounded& rhs); // accumulator = accumulator + rhs
-    Bounded& operator-= (const Bounded& rhs); // accumulator = accumulator - rhs       
-    Bounded& operator*= (const Bounded& rhs); // accumulator = accumulator * rhs
+    Bounded& operator+= (const Bounded& rhs); // done
+    Bounded& operator-= (const Bounded& rhs); // done   
+    Bounded& operator*= (const Bounded& rhs); // done
 
-    Bounded& operator+= (const int rhs);
-    Bounded& operator-= (const int rhs);
-    Bounded& operator*= (const int rhs);
+    Bounded& operator+= (const int rhs); // done
+    Bounded& operator-= (const int rhs); // done
+    Bounded& operator*= (const int rhs); // done
 
-    Bounded& operator+= (const double rhs);
-    Bounded& operator-= (const double rhs);
-    Bounded& operator*= (const double rhs);
+    Bounded& operator+= (const double rhs); // done
+    Bounded& operator-= (const double rhs); // done
+    Bounded& operator*= (const double rhs); // done
 
-    bool operator== (const Bounded& rhs) const;
-    bool operator!= (const Bounded& rhs) const;
-    bool operator< (const Bounded& rhs) const;
+    bool operator== (const Bounded& rhs) const; //done
+    bool operator!= (const Bounded& rhs) const; //done
+    bool operator< (const Bounded& rhs) const; //done
 
-    bool operator== (const int rhs) const;
-    bool operator!= (const int rhs) const;
-    bool operator< (const int rhs) const;
+    bool operator== (const int rhs) const; //done
+    bool operator!= (const int rhs) const; //done
+    bool operator< (const int rhs) const; //done
 
-    bool operator== (const double rhs) const;
-    bool operator!= (const double rhs) const;
-    bool operator< (const double rhs) const;
+    bool operator== (const double rhs) const; //done
+    bool operator!= (const double rhs) const; //done
+    bool operator< (const double rhs) const; //done
 
     friend Bounded operator+ (const int lhs, const Bounded& rhs);
     friend Bounded operator- (const int lhs, const Bounded& rhs);

@@ -126,5 +126,174 @@ double Bounded::operator/ (const int rhs) const
     return result.doubleValue;
 }
 
+Bounded Bounded::operator+ (const double rhs) const
+{
+    Bounded result(this->intValue + static_cast<int>(rhs), this->doubleValue + rhs);
+    return result;
+}
 
+Bounded Bounded::operator- (const double rhs) const
+{
+    Bounded result(this->intValue - static_cast<int>(rhs), this->doubleValue - rhs);
+    return result;
+}
 
+Bounded Bounded::operator* (const double rhs) const
+{
+    Bounded result(this->intValue * static_cast<int>(rhs), this->doubleValue * rhs);
+    return result;
+}
+
+double Bounded::operator/ (const double rhs) const
+{
+    if(rhs == 0.0) {
+        std::cerr << "Error: Division by zero in Bounded::operator/ (const double rhs) const" << std::endl;
+        return 0.0; // or throw an exception
+    }
+    Bounded result(this->intValue / static_cast<int>(rhs), this->doubleValue / rhs);
+    return result.doubleValue;
+}
+
+Bounded& Bounded::operator+= (const Bounded& rhs)
+{
+    this->intValue += rhs.intValue;
+    this->doubleValue += rhs.doubleValue;
+    return *this;
+}
+
+Bounded& Bounded::operator-= (const Bounded& rhs)
+{
+    this->intValue -= rhs.intValue;
+    this->doubleValue -= rhs.doubleValue;
+    return *this;
+}
+
+Bounded& Bounded::operator*= (const Bounded& rhs)
+{
+    this->intValue *= rhs.intValue;
+    this->doubleValue *= rhs.doubleValue;
+    return *this;
+}
+
+Bounded& Bounded::operator+= (const int rhs)
+{
+    this->intValue += rhs;
+    return *this;
+}
+
+Bounded& Bounded::operator-= (const int rhs)
+{
+    this->intValue -= rhs;
+    return *this;
+}
+
+Bounded& Bounded::operator*= (const int rhs)
+{
+    this->intValue *= rhs;
+    return *this;
+}
+
+Bounded& Bounded::operator+= (const double rhs)
+{
+    this->doubleValue += rhs;
+    return *this;
+}
+
+Bounded& Bounded::operator-= (const double rhs)
+{
+    this->doubleValue -= rhs;
+    return *this;
+}
+
+Bounded& Bounded::operator*= (const double rhs)
+{
+    this->doubleValue *= rhs;
+    return *this;
+}
+
+bool Bounded::operator== (const Bounded& rhs) const
+{
+    return this->intValue == rhs.intValue && this->doubleValue == rhs.doubleValue;
+}
+
+bool Bounded::operator!= (const Bounded& rhs) const
+{
+    return !(*this == rhs);
+}
+
+bool Bounded::operator< (const Bounded& rhs) const
+{
+    if (this->intValue < rhs.intValue) {
+        return true;
+    }
+    if (this->intValue > rhs.intValue) {
+        return false;
+    }
+    return this->doubleValue < rhs.doubleValue;
+}
+
+bool Bounded::operator== (const int rhs) const
+{
+    return this->intValue == rhs && this->doubleValue == 0.0;
+}
+
+bool Bounded::operator!= (const int rhs) const
+{
+    return !(*this == rhs);
+}
+
+bool Bounded::operator< (const int rhs) const
+{
+    if (this->intValue < rhs) {
+        return true;
+    }
+    if (this->intValue > rhs) {
+        return false;
+    }
+    return this->doubleValue < 0.0;
+}
+
+bool Bounded::operator== (const double rhs) const
+{
+    return this->intValue == static_cast<int>(rhs) && this->doubleValue == rhs;
+}
+
+bool Bounded::operator!= (const double rhs) const
+{
+    return !(*this == rhs);
+}
+
+bool Bounded::operator< (const double rhs) const
+{
+    if (this->intValue < static_cast<int>(rhs)) {
+        return true;
+    }
+    if (this->intValue > static_cast<int>(rhs)) {
+        return false;
+    }
+    return this->doubleValue < rhs;
+}
+
+Bounded operator+ (const int lhs, const Bounded& rhs)
+{
+    return rhs + lhs; // Reuse the member operator+
+}
+
+Bounded operator- (const int lhs, const Bounded& rhs)
+{
+    return Bounded(lhs) - rhs; // Create a temporary Bounded from lhs and use the member operator-
+}
+
+Bounded operator* (const int lhs, const Bounded& rhs)
+{
+    return rhs * lhs; // Reuse the member operator*
+}
+
+double operator/ (const int lhs, const Bounded& rhs)
+{
+    if(rhs.intValue == 0 || rhs.doubleValue == 0.0) {
+        std::cerr << "Error: Division by zero in operator/ (const int lhs, const Bounded& rhs)" << std::endl;
+        return 0.0; // or throw an exception
+    }
+    return Bounded(lhs) / rhs; // Create a temporary Bounded from lhs and use the member operator/
+}
