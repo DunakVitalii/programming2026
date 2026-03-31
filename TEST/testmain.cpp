@@ -2,24 +2,38 @@
 #include "test\test.h"
 
 using namespace std;
-
+void test()
+{
+    {
+        A a,
+         b(a),
+         c(b);
+    }
+    // cout << z;
+}
 int main()
 {
-    cout <<"Hello player. Now you have 100 health" << endl;
-    Human player;
-    fire flame(1);
+test();
+int x = 7;
+int a = x++;
+cout << "a = " << a << endl;
+cout << "x = " << x << endl;
 
-    int button;
+    //     cout <<"Hello player. Now you have 100 health" << endl;
+    //     Human player;
+    //     fire flame(1);
 
-    cout << "dont press 1 to tuch fire" << endl;
-    cin >> button;
+    //     int button;
 
-    if (button == 1)
-    {
-        flame.attack(player);
-    }
+    //     cout << "dont press 1 to tuch fire" << endl;
+    //     cin >> button;
 
-    cout << "IDIOT. Your health = " << player.getHealth() << endl;
+    //     if (button == 1)
+    //     {
+    //         flame.attack(player);
+    //     }
+
+    //     cout << "IDIOT. Your health = " << player.getHealth() << endl;
 
     return 0;
 }

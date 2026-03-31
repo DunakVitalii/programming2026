@@ -32,6 +32,9 @@
                 //"${fileDirname}\\Bounded\\Bounded.cpp",
                 "${fileDirname}\\test\\test.cpp",
                 //"${fileDirname}\\class\\class.cpp",
+                // "${fileDirname}\\GoldenOven\\Bar.cpp",
+                // "${fileDirname}\\GoldenOven\\Hole.cpp",
+                // "${fileDirname}\\GoldenOven\\Oven.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 
